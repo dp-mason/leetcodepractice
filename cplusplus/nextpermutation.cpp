@@ -51,6 +51,10 @@ class Solution {
                 if(nums.at(index) > target_value && nums.at(index) < curr_search_value) {
                     return_index = index;
                     curr_search_value = nums.at(index);
+                } else if (nums.at(index) <= target_value) {
+                    // if we have gotten to this point in the process, we know this subarray is sorted
+                    // from greatest to least, so we know we won't find a new viable value.
+                    break;
                 }
             }
             return return_index;
